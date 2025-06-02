@@ -1,4 +1,4 @@
--- Active: 1744969594514@@127.0.0.1@3306@cuci_sepatu_db
+-- Active: 1748709464767@@sql12.freesqldatabase.com@3306@sql12782324
 CREATE DATABASE cuci_sepatu_db;
 
 USE cuci_sepatu_db;
