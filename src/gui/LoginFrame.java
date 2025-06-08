@@ -2,7 +2,6 @@ package gui;
 
 import dao.UserDAO;
 import model.User;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -91,8 +90,9 @@ public class LoginFrame extends JFrame {
 
         if (user != null) {
             JOptionPane.showMessageDialog(this, "Login berhasil.");
-            new AdminDashboard().setVisible(true);
-            dispose();
+            // Mengirimkan user yang berhasil login ke AdminDashboard
+            new AdminDashboard(user).setVisible(true);
+            dispose();  // Menutup LoginFrame setelah login berhasil
         } else {
             JOptionPane.showMessageDialog(this, "Username atau password salah.", "Error", JOptionPane.ERROR_MESSAGE);
         }

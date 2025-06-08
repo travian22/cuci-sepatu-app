@@ -1,19 +1,25 @@
 package model;
 
+import java.sql.Timestamp;
+
 public class Transaction {
     private int id;
     private String customerName;
     private String shoeType;
     private double washPrice;
-    
-    public Transaction(int id, String customerName, String shoeType, double washPrice) {
+    private Timestamp date;
+    private String status; // Menambahkan status
+
+    public Transaction(int id, String customerName, String shoeType, double washPrice, Timestamp date, String status) {
         this.id = id;
         this.customerName = customerName;
         this.shoeType = shoeType;
         this.washPrice = washPrice;
+        this.date = date;
+        this.status = status;
     }
 
-    // Getters and Setters
+    // Getter and Setter methods
     public int getId() {
         return id;
     }
@@ -44,5 +50,21 @@ public class Transaction {
 
     public void setWashPrice(double washPrice) {
         this.washPrice = washPrice;
+    }
+
+    public Timestamp getDate() {
+        return date;
+    }
+
+    public void setDate(Timestamp date) {
+        this.date = date;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

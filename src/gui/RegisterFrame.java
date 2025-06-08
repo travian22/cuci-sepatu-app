@@ -2,7 +2,6 @@ package gui;
 
 import dao.UserDAO;
 import model.User;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,10 +9,11 @@ public class RegisterFrame extends JFrame {
     private JTextField usernameField;
     private JPasswordField passwordField;
     private JPasswordField confirmPasswordField;
+    private JComboBox<String> roleComboBox;  // Tambahkan JComboBox untuk memilih role
 
     public RegisterFrame() {
         setTitle("Register User");
-        setSize(400, 320);
+        setSize(400, 380);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -58,6 +58,17 @@ public class RegisterFrame extends JFrame {
         gbc.gridy = 2;
         panel.add(confirmPasswordField, gbc);
 
+        // Label Role (Admin / Staff)
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        panel.add(new JLabel("Role:"), gbc);
+
+        // ComboBox untuk memilih Role
+        roleComboBox = new JComboBox<>(new String[]{"Admin", "Staff"});
+        gbc.gridx = 1;
+        gbc.gridy = 3;
+        panel.add(roleComboBox, gbc);
+
         // Panel tombol dengan FlowLayout (sejajar)
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.CENTER, 15, 0));
         JButton registerButton = new JButton("Register");
@@ -67,7 +78,7 @@ public class RegisterFrame extends JFrame {
         buttonPanel.add(cancelButton);
 
         gbc.gridx = 0;
-        gbc.gridy = 3;
+        gbc.gridy = 4;
         gbc.gridwidth = 2;
         gbc.anchor = GridBagConstraints.CENTER;
         panel.add(buttonPanel, gbc);
@@ -100,7 +111,11 @@ public class RegisterFrame extends JFrame {
             return;
         }
 
-        boolean success = userDAO.registerUser(new User(0, username, password));
+        // Menentukan role berdasarkan pilihan di ComboBox
+        String role = (String) roleComboBox.getSelectedItem();
+        int roleValue = role.equals("Admin") ? 1 : 2;  // 1 untuk Admin, 2 untuk Staff
+
+        boolean success = userDAO.registerUser(new User(0, username, password), roleValue);
         if (success) {
             JOptionPane.showMessageDialog(this, "User registered successfully.");
             dispose();
