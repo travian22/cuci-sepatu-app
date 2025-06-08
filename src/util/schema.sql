@@ -1,4 +1,4 @@
--- Active: 1748709464767@@sql12.freesqldatabase.com@3306@sql12782324
+-- Active: 1749390280287@@sthhr.h.filess.io@3307@FreeDB_earswingus
 CREATE DATABASE cuci_sepatu_db;
 
 USE cuci_sepatu_db;
