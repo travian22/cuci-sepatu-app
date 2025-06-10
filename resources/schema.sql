@@ -1,7 +1,7 @@
--- Active: 1749390280287@@sthhr.h.filess.io@3307@FreeDB_earswingus
-CREATE DATABASE cuci_sepatu_db;
+-- Active: 1744969594514@@127.0.0.1@3306@cucisepatu
+CREATE DATABASE cucisepatu;
 
-USE cuci_sepatu_db;
+USE cucisepatu;
 
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
