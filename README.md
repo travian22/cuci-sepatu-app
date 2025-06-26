@@ -53,7 +53,7 @@ cuci_sepatu_app/
 - Harga cuci sepatu otomatis berdasarkan jenis sepatu.
 
 ## Kontributor
-- [Nama Anda]
+- Septaro Travian Gadha
 
 ---
-Aplikasi ini dibuat untuk kebutuhan tugas/project manajemen laundry sepatu. 
+Aplikasi ini dibuat untuk kebutuhan tugas
